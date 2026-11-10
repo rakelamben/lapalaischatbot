@@ -1,0 +1,10 @@
+{
+  "info": [
+    {"label": "Jam operasional", "isi": "Selasa sampai Minggu, pukul 18.00–23.00 (contoh)", "urutan": 1},
+    {"label": "Cara reservasi", "isi": "Melalui telepon atau WhatsApp restoran (contoh)", "urutan": 2},
+    {"label": "Kontak", "isi": "0812-0000-0000 (contoh, ganti dengan nomor restoran)", "urutan": 3},
+    {"label": "Kebijakan pembatalan", "isi": "Pembatalan paling lambat 24 jam sebelum kedatangan (contoh)", "urutan": 4},
+    {"label": "Dress code", "isi": "Smart casual (contoh)", "urutan": 5},
+    {"label": "Ketentuan Carte Blanche", "isi": "Dipesan oleh seluruh tamu dalam satu meja (contoh)", "urutan": 6}
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "weights": {
+    "jaccard": 0.4,
+    "fuzzy": 0.3,
+    "cakupan": 0.3
+  },
+  "tau": 0.45,
+  "delta": 0.10,
+  "rho": 0.15,
+  "fuzzy_match_min": 0.8,
+  "fuzzy_exact_max_len": 3,
+  "token_weight_default": 2,
+  "price_default_threshold": 1200000,
+  "direction_le": ["bawah", "kurang", "murah", "maksimal", "sampai", "maks"],
+  "direction_gt": ["atas", "lebih", "mahal", "minimal", "min"],
+  "max_message_length": 500
+}

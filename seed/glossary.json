@@ -1,0 +1,26 @@
+{
+  "istilah": [
+    {"istilah": "sous-vide", "makna": "memasak dalam kantong vakum dengan air bersuhu rendah yang stabil", "jenis": "teknik"},
+    {"istilah": "confit", "makna": "memasak perlahan dalam lemak hingga empuk", "jenis": "teknik"},
+    {"istilah": "braisé", "makna": "menumis sebentar lalu memasak perlahan dalam sedikit cairan", "jenis": "teknik"},
+    {"istilah": "poêlé", "makna": "memasak dengan wajan dan sedikit lemak hingga kecokelatan", "jenis": "teknik"},
+    {"istilah": "sauté", "makna": "menumis cepat dengan api besar dan sedikit minyak", "jenis": "teknik"},
+    {"istilah": "pocher", "makna": "merebus perlahan dalam cairan di bawah titik didih", "jenis": "teknik"},
+    {"istilah": "flambé", "makna": "menyiram hidangan dengan alkohol lalu membakarnya sebentar", "jenis": "teknik"},
+    {"istilah": "gratiner", "makna": "memanggang hingga permukaannya berkerak keemasan", "jenis": "teknik"},
+    {"istilah": "déglacer", "makna": "melarutkan sisa masakan di wajan dengan cairan untuk dijadikan saus", "jenis": "teknik"},
+    {"istilah": "meunière", "makna": "membalur dengan tepung lalu memasak dengan mentega", "jenis": "teknik"},
+
+    {"istilah": "prix fixe", "makna": "menu paket dengan harga tetap", "jenis": "umum"},
+    {"istilah": "carte blanche", "makna": "hidangan yang sepenuhnya dipilihkan oleh chef", "jenis": "umum"},
+    {"istilah": "à la carte", "makna": "memesan hidangan satuan dari daftar menu", "jenis": "umum"},
+    {"istilah": "chef pick", "makna": "pilihan khusus dari chef", "jenis": "umum"},
+    {"istilah": "set course", "makna": "rangkaian hidangan yang disajikan berurutan", "jenis": "umum"},
+    {"istilah": "les entrées", "makna": "hidangan pembuka", "jenis": "umum"},
+    {"istilah": "les plats", "makna": "hidangan utama", "jenis": "umum"},
+    {"istilah": "les fromages", "makna": "hidangan keju", "jenis": "umum"},
+    {"istilah": "les desserts", "makna": "hidangan penutup", "jenis": "umum"},
+    {"istilah": "dégustation", "makna": "menu cicip beberapa hidangan berukuran kecil", "jenis": "umum"},
+    {"istilah": "gourmand", "makna": "menu lengkap dengan beberapa tahap hidangan", "jenis": "umum"}
+  ]
+}

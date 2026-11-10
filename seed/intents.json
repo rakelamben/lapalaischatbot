@@ -1,0 +1,252 @@
+{
+  "intents": [
+    {
+      "kode": "sapaan",
+      "nama": "Sapaan",
+      "jenis": "sosial",
+      "frasa_kanonik": null,
+      "pola": [
+        "halo",
+        "hai",
+        "hallo",
+        "selamat pagi",
+        "selamat siang",
+        "selamat sore",
+        "selamat malam",
+        "permisi",
+        "assalamualaikum",
+        "salam"
+      ],
+      "template": [
+        "Selamat datang di restoran kami. Ada yang bisa kami bantu seputar menu, reservasi, atau pairing minuman?",
+        "Halo, selamat datang. Silakan tanyakan apa saja tentang menu, harga, atau reservasi kami.",
+        "Selamat datang. Kami siap membantu Anda memilih hidangan yang tepat."
+      ]
+    },
+    {
+      "kode": "reservasi",
+      "nama": "Info reservasi",
+      "jenis": "info",
+      "frasa_kanonik": "Bagaimana cara reservasi?",
+      "pola": [
+        "reservasi",
+        "reservasi meja",
+        "booking meja",
+        "pesan meja",
+        "pesan tempat",
+        "cara reservasi",
+        "jam buka",
+        "jam operasional",
+        "kontak restoran",
+        "dress code",
+        "kebijakan pembatalan"
+      ],
+      "template": [
+        "Berikut informasi reservasi kami: {daftar}",
+        "Untuk reservasi, mohon perhatikan hal berikut: {daftar}",
+        "Kami dengan senang hati menyambut reservasi Anda. Informasi yang perlu diketahui: {daftar}"
+      ]
+    },
+    {
+      "kode": "carte_blanche",
+      "nama": "Carte Blanche (pilihan chef)",
+      "jenis": "info",
+      "frasa_kanonik": "Apa isi menu Carte Blanche?",
+      "pola": [
+        "carte blanche",
+        "menu carte blanche",
+        "isi carte blanche",
+        "pilihan chef",
+        "menu pilihan chef",
+        "chef pick",
+        "rekomendasi chef",
+        "menu chef"
+      ],
+      "template": [
+        "Ini adalah rekomendasi Carte Blanche dari chef kami hari ini, diracik khusus berdasarkan bahan musiman tersegar: {daftar}",
+        "Dalam Carte Blanche hari ini, chef mempersembahkan kejutan rasa dengan pilihan hidangan terbaik yang bisa berbeda setiap harinya: {daftar}",
+        "Menyerahkan pilihan sepenuhnya kepada intuisi chef hari ini—inilah rangkaian hidangan otentik Carte Blanche yang kami siapkan: {daftar}"
+      ]
+    },
+    {
+      "kode": "a_la_carte",
+      "nama": "Menu à la carte",
+      "jenis": "info",
+      "frasa_kanonik": "Tampilkan menu à la carte",
+      "pola": [
+        "a la carte",
+        "menu a la carte",
+        "menu satuan",
+        "les entrees",
+        "les plats",
+        "les fromages",
+        "les desserts",
+        "hidangan pembuka",
+        "hidangan utama",
+        "hidangan penutup",
+        "daftar menu",
+        "dessert"
+      ],
+      "template": [
+        "Silakan pilih hidangan satuan dari menu à la carte kami: {daftar}",
+        "Berikut menu à la carte kami per kategori: {daftar}",
+        "Menu à la carte kami terbagi dalam beberapa kategori: {daftar}"
+      ]
+    },
+    {
+      "kode": "prix_fixe",
+      "nama": "Set course (Prix Fixe)",
+      "jenis": "info",
+      "frasa_kanonik": "Apa saja menu Prix Fixe?",
+      "pola": [
+        "prix fixe",
+        "menu prix fixe",
+        "set course",
+        "menu set course",
+        "paket menu",
+        "menu paket",
+        "degustation",
+        "menu degustation",
+        "gourmand",
+        "menu gourmand",
+        "durasi course"
+      ],
+      "template": [
+        "Berikut set course Prix Fixe kami: {daftar}",
+        "Untuk pengalaman makan berurutan dengan harga tetap, inilah pilihan Prix Fixe kami: {daftar}",
+        "Kami menyiapkan beberapa set course untuk Anda: {daftar}"
+      ]
+    },
+    {
+      "kode": "teknik",
+      "nama": "Teknik masakan",
+      "jenis": "info",
+      "frasa_kanonik": "Apa saja teknik masakan yang dipakai?",
+      "pola": [
+        "teknik masak",
+        "teknik masakan",
+        "istilah masakan",
+        "istilah memasak",
+        "cara memasak",
+        "sous vide",
+        "confit",
+        "braise",
+        "poele",
+        "saute",
+        "pocher",
+        "flambe",
+        "gratiner",
+        "deglacer",
+        "meuniere"
+      ],
+      "template": [
+        "Berikut istilah teknik masakan yang kami gunakan: {daftar}",
+        "Agar lebih mudah memahami menu, ini penjelasan teknik masakan kami: {daftar}",
+        "Teknik memasak yang sering muncul pada menu kami: {daftar}"
+      ]
+    },
+    {
+      "kode": "diet",
+      "nama": "Menu diet dan alergen",
+      "jenis": "info",
+      "frasa_kanonik": "Menu apa saja yang vegetarian, halal, atau tanpa seafood?",
+      "pola": [
+        "vegetarian",
+        "halal",
+        "tanpa seafood",
+        "menu diet",
+        "alergi",
+        "alergen",
+        "pantangan makanan"
+      ],
+      "template": [
+        "Berikut menu yang sesuai dengan kebutuhan Anda: {daftar}",
+        "Kami telah menyaring menu sesuai pilihan Anda: {daftar}",
+        "Pilihan yang cocok untuk kebutuhan tersebut: {daftar}"
+      ]
+    },
+    {
+      "kode": "harga",
+      "nama": "Menu berdasarkan harga",
+      "jenis": "info",
+      "frasa_kanonik": "Tampilkan menu berdasarkan harga",
+      "pola": [
+        "harga",
+        "menu murah",
+        "menu mahal",
+        "menu hemat",
+        "budget",
+        "anggaran",
+        "rentang harga",
+        "di bawah",
+        "di atas",
+        "kurang dari",
+        "lebih dari"
+      ],
+      "template": [
+        "Berikut menu berdasarkan rentang harga: {daftar}",
+        "Sesuai anggaran Anda, kami menyarankan menu berikut: {daftar}",
+        "Pilihan menu menurut harga: {daftar}"
+      ]
+    },
+    {
+      "kode": "pairing",
+      "nama": "Informasi pairing",
+      "jenis": "info",
+      "frasa_kanonik": "Apa saja pairing wine dan non-alkohol?",
+      "pola": [
+        "pairing",
+        "wine",
+        "anggur",
+        "wine pairing",
+        "pasangan wine",
+        "minuman pendamping",
+        "minuman",
+        "mocktail",
+        "tanpa alkohol",
+        "teh",
+        "jus"
+      ],
+      "template": [
+        "Berikut pairing minuman untuk hidangan kami: {daftar}",
+        "Untuk melengkapi hidangan, kami merekomendasikan minuman ini: {daftar}",
+        "Pasangan minuman yang kami sarankan untuk hidangan kami: {daftar}"
+      ]
+    },
+    {
+      "kode": "penutup",
+      "nama": "Penutup",
+      "jenis": "sosial",
+      "frasa_kanonik": null,
+      "pola": [
+        "terima kasih",
+        "makasih",
+        "thanks",
+        "thank you",
+        "sampai jumpa",
+        "dadah",
+        "bye",
+        "cukup sekian",
+        "sudah cukup",
+        "selesai"
+      ],
+      "template": [
+        "Terima kasih telah berkunjung. Kami menantikan kedatangan Anda.",
+        "Sampai jumpa, semoga hidangan kami berkesan bagi Anda.",
+        "Dengan senang hati, kami tunggu kehadiran Anda di meja kami."
+      ]
+    },
+    {
+      "kode": "fallback",
+      "nama": "Fallback",
+      "jenis": "fallback",
+      "frasa_kanonik": null,
+      "pola": [],
+      "template": [
+        "Mohon maaf, kami belum menangkap maksud pertanyaan Anda.",
+        "Maaf, pertanyaan tersebut belum dapat kami jawab.",
+        "Mohon maaf, kami belum mengerti. Bisa dijelaskan dengan cara lain?"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "minuman": [
+    {"nama": "Chablis", "jenis": "wine", "deskripsi": "Anggur putih kering yang segar dengan aroma mineral"},
+    {"nama": "Sancerre", "jenis": "wine", "deskripsi": "Anggur putih berasam segar dengan aroma sitrus"},
+    {"nama": "Bourgogne Pinot Noir", "jenis": "wine", "deskripsi": "Anggur merah ringan dengan aroma buah beri"},
+    {"nama": "Saint-Émilion", "jenis": "wine", "deskripsi": "Anggur merah berbadan penuh dengan tanin lembut"},
+    {"nama": "Champagne Brut", "jenis": "wine", "deskripsi": "Anggur bersoda kering dengan gelembung halus"},
+    {"nama": "Sauternes", "jenis": "wine", "deskripsi": "Anggur putih manis dengan aroma madu dan aprikot"},
+    {"nama": "Teh Hijau Jasmine", "jenis": "non_alkohol", "deskripsi": "Teh hijau beraroma melati yang ringan"},
+    {"nama": "Jus Apel Sparkling", "jenis": "non_alkohol", "deskripsi": "Jus apel bersoda yang manis dan segar"},
+    {"nama": "Mocktail Sitrus Elderflower", "jenis": "non_alkohol", "deskripsi": "Minuman tanpa alkohol berpadu sitrus dan bunga elder"}
+  ],
+
+  "pairing": [
+    {"hidangan": "Velouté de Champignons", "minuman": ["Chablis", "Teh Hijau Jasmine"]},
+    {"hidangan": "Salade de Chèvre Chaud", "minuman": ["Sancerre"]},
+    {"hidangan": "Tartare de Saumon", "minuman": ["Champagne Brut", "Mocktail Sitrus Elderflower"]},
+    {"hidangan": "Foie Gras Poêlé", "minuman": ["Sauternes"]},
+    {"hidangan": "Boeuf Bourguignon", "minuman": ["Bourgogne Pinot Noir"]},
+    {"hidangan": "Risotto aux Truffes", "minuman": ["Chablis", "Mocktail Sitrus Elderflower"]},
+    {"hidangan": "Canard Confit", "minuman": ["Bourgogne Pinot Noir"]},
+    {"hidangan": "Bar Rôti, Beurre Blanc", "minuman": ["Sancerre"]},
+    {"hidangan": "Filet de Boeuf Rossini", "minuman": ["Saint-Émilion"]},
+    {"hidangan": "Homard Thermidor", "minuman": ["Champagne Brut"]},
+    {"hidangan": "Plateau de Fromages Affinés", "minuman": ["Sauternes"]},
+    {"hidangan": "Camembert Rôti au Miel", "minuman": ["Jus Apel Sparkling"]},
+    {"hidangan": "Tarte Tatin", "minuman": ["Jus Apel Sparkling", "Sauternes"]},
+    {"hidangan": "Soufflé au Grand Marnier", "minuman": ["Champagne Brut"]},
+    {"hidangan": "Crème Brûlée", "minuman": ["Teh Hijau Jasmine", "Sauternes"]}
+  ]
+}

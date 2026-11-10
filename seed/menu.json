@@ -1,0 +1,77 @@
+{
+  "label_diet": [
+    {"kode": "vegetarian", "nama": "Vegetarian"},
+    {"kode": "halal", "nama": "Halal"},
+    {"kode": "non_seafood", "nama": "Tanpa seafood"}
+  ],
+
+  "kategori": [
+    {"nama": "Les Entrées", "urutan": 1},
+    {"nama": "Les Plats", "urutan": 2},
+    {"nama": "Les Fromages", "urutan": 3},
+    {"nama": "Les Desserts", "urutan": 4}
+  ],
+
+  "hidangan": [
+    {"nama": "Velouté de Champignons", "kategori": "Les Entrées", "harga": 285000,
+     "deskripsi": "Sup krim jamur yang halus", "diet": ["vegetarian", "halal", "non_seafood"]},
+    {"nama": "Salade de Chèvre Chaud", "kategori": "Les Entrées", "harga": 310000,
+     "deskripsi": "Salad dengan keju kambing hangat", "diet": ["vegetarian", "non_seafood"]},
+    {"nama": "Tartare de Saumon", "kategori": "Les Entrées", "harga": 365000,
+     "deskripsi": "Salmon mentah cincang dengan bumbu segar", "diet": ["halal"]},
+    {"nama": "Foie Gras Poêlé", "kategori": "Les Entrées", "harga": 520000,
+     "deskripsi": "Hati bebek panggang dengan kulit kecokelatan", "diet": ["non_seafood"]},
+
+    {"nama": "Boeuf Bourguignon", "kategori": "Les Plats", "harga": 890000,
+     "deskripsi": "Daging sapi dimasak pelan dalam saus anggur merah", "diet": ["non_seafood"]},
+    {"nama": "Risotto aux Truffes", "kategori": "Les Plats", "harga": 760000,
+     "deskripsi": "Nasi risotto krim dengan truffle", "diet": ["vegetarian", "halal", "non_seafood"]},
+    {"nama": "Canard Confit", "kategori": "Les Plats", "harga": 840000,
+     "deskripsi": "Paha bebek yang dimasak pelan dalam lemaknya", "diet": ["non_seafood"]},
+    {"nama": "Bar Rôti, Beurre Blanc", "kategori": "Les Plats", "harga": 1250000,
+     "deskripsi": "Ikan bar panggang dengan saus mentega putih", "diet": []},
+    {"nama": "Filet de Boeuf Rossini", "kategori": "Les Plats", "harga": 1200000,
+     "deskripsi": "Fillet sapi dengan foie gras dan saus truffle", "diet": ["non_seafood"]},
+    {"nama": "Homard Thermidor", "kategori": "Les Plats", "harga": 1650000,
+     "deskripsi": "Lobster panggang dengan saus krim", "diet": []},
+
+    {"nama": "Plateau de Fromages Affinés", "kategori": "Les Fromages", "harga": 320000,
+     "deskripsi": "Seleksi keju matang dengan pelengkap", "diet": ["vegetarian", "non_seafood"]},
+    {"nama": "Camembert Rôti au Miel", "kategori": "Les Fromages", "harga": 295000,
+     "deskripsi": "Camembert panggang dengan madu", "diet": ["vegetarian", "non_seafood"]},
+
+    {"nama": "Tarte Tatin", "kategori": "Les Desserts", "harga": 210000,
+     "deskripsi": "Tart apel karamel yang dibalik", "diet": ["vegetarian", "halal", "non_seafood"]},
+    {"nama": "Soufflé au Grand Marnier", "kategori": "Les Desserts", "harga": 260000,
+     "deskripsi": "Soufflé ringan beraroma likuer jeruk", "diet": ["vegetarian", "non_seafood"]},
+    {"nama": "Crème Brûlée", "kategori": "Les Desserts", "harga": 230000,
+     "deskripsi": "Krim vanila dengan lapisan karamel renyah", "diet": ["vegetarian", "halal", "non_seafood"]}
+  ],
+
+  "paket": [
+    {
+      "tipe": "prix_fixe",
+      "nama": "Menu Dégustation",
+      "deskripsi": "Perjalanan cicip 3 tahap yang dirancang sebagai pengantar klasik gastronomi Prancis. Mengusung konsep harmoni esensial, course ini menyajikan transisi rasa dari kelembutan gurih beraroma earthy (Velouté), kedalaman rasa daging dengan saus anggur merah pekat (Boeuf Bourguignon), hingga penutup manis-legit karamel apel renyah (Tarte Tatin).",
+      "harga": 1100000,
+      "durasi_menit": 90,
+      "hidangan": ["Velouté de Champignons", "Boeuf Bourguignon", "Tarte Tatin"]
+    },
+    {
+      "tipe": "prix_fixe",
+      "nama": "Menu Gourmand",
+      "deskripsi": "Eksplorasi rasa 4 tahap yang memanjakan selera pencinta kuliner Prancis. Mengusung konsep pesta tekstur dan kekayaan terroir, menghadirkan kontras segar-gurih keju kambing hangat, dilanjutkan paha bebek empuk kaya rempah confit, seleksi keju artisanal dengan kedalaman rasa fermentasi, dan ditutup karamel renyah di atas krim vanila lembut dingin.",
+      "harga": 1450000,
+      "durasi_menit": 120,
+      "hidangan": ["Salade de Chèvre Chaud", "Canard Confit", "Plateau de Fromages Affinés", "Crème Brûlée"]
+    },
+    {
+      "tipe": "carte_blanche",
+      "nama": "Carte Blanche",
+      "deskripsi": "Pengalaman kuliner puncak 5 tahap dengan konsep 'kertas putih', di mana chef bebas mengekspresikan kreativitas harian berdasarkan pasokan bahan musiman terbaik hari ini. Menghadirkan simfoni rasa tak terduga—mulai dari kemewahan luks foie gras, kesegaran tartare laut, keagungan fillet Rossini bertabur truffle, hingga keju lumer dan soufflé hangat beraroma likuer.",
+      "harga": 2250000,
+      "durasi_menit": 150,
+      "hidangan": ["Foie Gras Poêlé", "Tartare de Saumon", "Filet de Boeuf Rossini", "Camembert Rôti au Miel", "Soufflé au Grand Marnier"]
+    }
+  ]
+}

@@ -1,0 +1,231 @@
+kalimat,intent,split,tag
+halo selamat malam,sapaan,tuning,formal
+selamat pagi kak,sapaan,tuning,formal
+hai saya ingin bertanya,sapaan,tuning,formal
+assalamualaikum selamat sore,sapaan,tuning,formal
+halo apa kabar,sapaan,tuning,formal
+permisi selamat siang,sapaan,tuning,formal
+salam kenal,sapaan,tuning,formal
+hallo apa kabar restoran,sapaan,tuning,informal
+hai kak mau tanya tanya nih,sapaan,tuning,informal
+halo min,sapaan,tuning,informal
+hai hai,sapaan,tuning,informal
+pagi min mau nanya,sapaan,tuning,informal
+permisi kak mau tanya,sapaan,tuning,informal
+hallo selamat malam semua,sapaan,tuning,informal
+hllo selamat pagi,sapaan,heldout,typo
+hlo min selamat siang,sapaan,heldout,typo
+haii selamat sore kak,sapaan,heldout,informal
+assalamu alaikum,sapaan,heldout,formal
+permisi admin,sapaan,heldout,informal
+halo selamat datang kembali,sapaan,heldout,formal
+bagaimana cara reservasi meja di restoran ini,reservasi,tuning,formal
+apakah saya bisa booking meja untuk besok,reservasi,tuning,formal
+mohon informasi jam buka restoran,reservasi,tuning,formal
+berapa jam operasional restoran ini,reservasi,tuning,formal
+apa kontak restoran yang bisa dihubungi,reservasi,tuning,formal
+bagaimana kebijakan pembatalan reservasi,reservasi,tuning,formal
+apakah ada dress code khusus saat datang,reservasi,tuning,formal
+mau pesan meja buat nanti malam dong,reservasi,tuning,informal
+cara booking tempat gmn ya kak,reservasi,tuning,informal
+buka jam berapa aja nih restorannya,reservasi,tuning,informal
+minta no kontak resto dong buat pesan tempat,reservasi,tuning,informal
+ada syarat pakaian gak kalau makan di sana,reservasi,tuning,informal
+kalo mau cancel booking kena denda gak,reservasi,tuning,informal
+mau reservasi tempat duduk untuk 4 orang,reservasi,tuning,informal
+resrvasi meja buat besok malam,reservasi,heldout,typo
+bisa boking tempat gak min,reservasi,heldout,typo
+kontak reservasi restoran berapa ya,reservasi,heldout,formal
+info jam buka dan ketentuan reservasi,reservasi,heldout,formal
+halo mau tanya cara reservasi tempat,reservasi,heldout,multi
+mau booking meja dong kak,reservasi,heldout,informal
+apa itu menu Carte Blanche,carte_blanche,tuning,formal
+bisa jelaskan tentang paket Carte Blanche,carte_blanche,tuning,formal
+apa saja pilihan chef pada Carte Blanche,carte_blanche,tuning,formal
+saya ingin tahu isi menu Carte Blanche,carte_blanche,tuning,formal
+bagaimana konsep chef pick di restoran ini,carte_blanche,tuning,formal
+apa rekomendasi chef terbaik saat ini,carte_blanche,tuning,formal
+tampilkan menu Carte Blanche pilihan chef,carte_blanche,tuning,formal
+menu carte blanche isinya apa aja ya,carte_blanche,tuning,informal
+pengen nyobain chef pick nih rekomen apa,carte_blanche,tuning,informal
+menu rekomendasi chef apa aja kak,carte_blanche,tuning,informal
+carte blanche itu gimana maksudnya,carte_blanche,tuning,informal
+ada menu pilihan chef gak di sini,carte_blanche,tuning,informal
+mau coba menu kejutan chef pick dong,carte_blanche,tuning,informal
+info carte blanche dong min,carte_blanche,tuning,informal
+menu carte blance itu apa ya,carte_blanche,heldout,typo
+cheff pick menunya apa saja,carte_blanche,heldout,typo
+tolong jelaskan menu carte blanche,carte_blanche,heldout,formal
+halo saya mau tahu menu pilihan chef,carte_blanche,heldout,multi
+apa keistimewaan carte blanche,carte_blanche,heldout,formal
+rekomendasi chef untuk malam ini,carte_blanche,heldout,informal
+tampilkan daftar menu a la carte,a_la_carte,tuning,formal
+apa saja pilihan hidangan pembuka atau les entrees,a_la_carte,tuning,formal
+saya ingin melihat menu hidangan utama les plats,a_la_carte,tuning,formal
+ada hidangan keju apa saja di les fromages,a_la_carte,tuning,formal
+tampilkan daftar menu penutup les desserts,a_la_carte,tuning,formal
+apakah ada menu satuan a la carte,a_la_carte,tuning,formal
+tunjukkan seluruh daftar menu makanan,a_la_carte,tuning,formal
+mau lihat menu satuan dong kak,a_la_carte,tuning,informal
+daftar menu ala carte ada apa aja,a_la_carte,tuning,informal
+les entrees apa aja nih pilihannya,a_la_carte,tuning,informal
+ada dessert manis apa aja kak,a_la_carte,tuning,informal
+spill menu les plats dong min,a_la_carte,tuning,informal
+mau pesan satuan aja bukan paket,a_la_carte,tuning,informal
+pilihan hidangan utama apa saja,a_la_carte,tuning,informal
+daftar menu a la carte nya apa aja,a_la_carte,heldout,informal
+menu satuaan a la carte dong,a_la_carte,heldout,typo
+ada hidangan pembuka apa saja di les entrees,a_la_carte,heldout,formal
+tampilkan menu les fromages dan les desserts,a_la_carte,heldout,formal
+halo tolong perlihatkan menu satuan ala carte,a_la_carte,heldout,multi
+pilihan dessert penutup ada apa aja min,a_la_carte,heldout,informal
+apa saja paket menu Prix Fixe yang tersedia,prix_fixe,tuning,formal
+tolong jelaskan pilihan set course di restoran ini,prix_fixe,tuning,formal
+berapa lama durasi course untuk menu degustation,prix_fixe,tuning,formal
+apa isi dari menu degustation,prix_fixe,tuning,formal
+bisa jelaskan tentang paket menu gourmand,prix_fixe,tuning,formal
+apakah ada paket menu dengan harga tetap,prix_fixe,tuning,formal
+tampilkan seluruh paket set course,prix_fixe,tuning,formal
+paket prix fixe ada apa aja ya kak,prix_fixe,tuning,informal
+set course berapa lama makanannya keluar,prix_fixe,tuning,informal
+menu paket degustation isinya apa aja,prix_fixe,tuning,informal
+menu gourmand itu paket apa min,prix_fixe,tuning,informal
+ada paket set menu gak di resto ini,prix_fixe,tuning,informal
+berapa lama durasi makan paket prix fixe,prix_fixe,tuning,informal
+mau pesan menu paket dong ada apa aja,prix_fixe,tuning,informal
+paket prix fix ada apa aja,prix_fixe,heldout,typo
+menu degutasion itu apa ya,prix_fixe,heldout,typo
+daftar hidangan dalam set course prix fixe,prix_fixe,heldout,formal
+durasi set course menu gourmand berapa lama,prix_fixe,heldout,formal
+selamat malam mau tanya paket menu prix fixe,prix_fixe,heldout,multi
+harga dan isi paket set course degustation,prix_fixe,heldout,formal
+apa saja teknik masakan yang digunakan restoran,teknik,tuning,formal
+bisa jelaskan apa itu teknik sous vide,teknik,tuning,formal
+apa makna dari teknik memasak confit,teknik,tuning,formal
+bagaimana cara memasak braise dan poele,teknik,tuning,formal
+apa yang dimaksud dengan teknik flambe,teknik,tuning,formal
+tolong jelaskan arti teknik saute dan pocher,teknik,tuning,formal
+apa arti teknik gratiner dan deglacer,teknik,tuning,formal
+apa itu cara memasak meuniere,teknik,tuning,formal
+teknik masak sous vide maksudnya gimana sih,teknik,tuning,informal
+confit itu dimasaknya kayak gimana min,teknik,tuning,informal
+istilah masakan prancis apa aja yang dipakai,teknik,tuning,informal
+flambe itu yang dibakar pakai alkohol ya,teknik,tuning,informal
+cara masak braise itu gimana kak,teknik,tuning,informal
+arti istilah poele dalam menu apa ya,teknik,tuning,informal
+teknik memasak sousvide itu apa,teknik,heldout,typo
+apa itu teknik konfit bebek,teknik,heldout,typo
+penjelasan istilah teknik masakan prancis,teknik,heldout,formal
+apa perbedaan teknik saute dan pocher,teknik,heldout,formal
+halo min mau tanya apa itu teknik sous vide,teknik,heldout,multi
+istilah memasak deglacer dan gratiner artinya apa,teknik,heldout,formal
+menu apa saja yang cocok untuk vegetarian,diet,tuning,formal
+tampilkan hidangan yang halal di restoran ini,diet,tuning,formal
+apakah ada menu makanan tanpa seafood,diet,tuning,formal
+saya memiliki pantangan makanan laut apakah ada pilihan,diet,tuning,formal
+tolong filter hidangan yang vegetarian dan halal,diet,tuning,formal
+apakah ada menu diet khusus bagi tamu,diet,tuning,formal
+saya ada alergi seafood hidangan mana yang aman,diet,tuning,formal
+ada makanan vegetarian apa aja nih kak,diet,tuning,informal
+menu yang halal apa aja ya min,diet,tuning,informal
+makanan tanpa seafood ada gak di sini,diet,tuning,informal
+pilihan veggie yang enak apa aja,diet,tuning,informal
+saya vegetarian mau cari menu yang pas,diet,tuning,informal
+menu halal dan bebas seafood apa saja,diet,tuning,informal
+ada alergen apa aja di hidangan utama,diet,tuning,informal
+menu vegetarain apa aja ya,diet,heldout,typo
+ada makanan non sefood gak min,diet,heldout,typo
+daftar hidangan vegetarian dan halal,diet,heldout,formal
+apakah menu salmon aman untuk yang alergi,diet,heldout,formal
+halo kak saya vegetarian mau tanya menunya,diet,heldout,multi
+menu tanpa seafood yang paling direkomendasikan,diet,heldout,informal
+"tampilkan menu di bawah 1,2 juta rupiah",harga,tuning,formal
+apakah ada menu dengan harga di atas 1.200.000,harga,tuning,formal
+saya mencari menu murah yang terjangkau,harga,tuning,formal
+hidangan apa saja yang harganya di bawah 1 juta,harga,tuning,formal
+daftar menu untuk anggaran hemat di restoran ini,harga,tuning,formal
+tunjukkan rentang harga menu hidangan,harga,tuning,formal
+menu apa saja yang harganya paling mahal,harga,tuning,formal
+"menu di bawah 1,2jt ada apa aja min",harga,tuning,informal
+cari menu yang budget hemat dong kak,harga,tuning,informal
+"menu yang harganya di atas 1,2 juta apa aja",harga,tuning,informal
+makanan yang murah meriah di sini ada apa,harga,tuning,informal
+spill harga menu dong ada rentang berapa,harga,tuning,informal
+mau cari makanan sesuai budget 500rb,harga,tuning,informal
+rekomendasi hidangan harga terjangkau,harga,tuning,informal
+menu dbawah 1.2 jt apa aja,harga,heldout,typo
+daftar menu dengan hrga terjangkau,harga,heldout,typo
+daftar hidangan dengan harga di atas 1.200.000,harga,heldout,formal
+tampilkan menu murah sampai dengan Rp1.200.000,harga,heldout,formal
+"halo tolong carikan menu di bawah 1,2 juta",harga,heldout,multi
+menu mewah di atas satu koma dua juta rupiah,harga,heldout,formal
+apa rekomendasi wine pairing untuk hidangan di sini,pairing,tuning,formal
+apakah tersedia pilihan minuman tanpa alkohol atau mocktail,pairing,tuning,formal
+minuman apa yang cocok dipasangkan dengan Veloute,pairing,tuning,formal
+tampilkan daftar pasangan anggur untuk menu utama,pairing,tuning,formal
+apakah ada pairing teh atau jus untuk hidangan,pairing,tuning,formal
+saya tidak minum alkohol apa pasangan minuman yang sesuai,pairing,tuning,formal
+rekomendasi pairing minuman untuk menu ikan dan daging,pairing,tuning,formal
+wine pairing yang pas buat steak apa ya kak,pairing,tuning,informal
+ada mocktail segar pendamping makanan gak,pairing,tuning,informal
+minuman tanpa alkohol buat pendamping apa aja,pairing,tuning,informal
+pasangan wine untuk dessert apa yang enak,pairing,tuning,informal
+info pairing anggur merah dan putih dong min,pairing,tuning,informal
+teh atau jus yang cocok buat makan malam,pairing,tuning,informal
+rekomendasi wine yang cocok untuk hidangan keju,pairing,tuning,informal
+rekomendasi win pairing apa aja min,pairing,heldout,typo
+pasangan minumn mocktail ada apa aja,pairing,heldout,typo
+daftar pairing wine dan minuman non-alkohol,pairing,heldout,formal
+minuman pendamping tanpa alkohol yang tersedia,pairing,heldout,formal
+halo mau tanya pairing wine untuk hidangan bebek,pairing,heldout,multi
+pairing anggur manis sauternes dengan hidangan apa,pairing,heldout,formal
+terima kasih atas bantuannya,penutup,tuning,formal
+terima kasih banyak atas informasinya,penutup,tuning,formal
+sampai jumpa pada kunjungan berikutnya,penutup,tuning,formal
+selesai terima kasih,penutup,tuning,formal
+cukup sekian informasinya terima kasih,penutup,tuning,formal
+terima kasih selamat malam,penutup,tuning,formal
+sudah cukup jelas terima kasih banyak,penutup,tuning,formal
+makasih ya kak infonya sangat membantu,penutup,tuning,informal
+thx min infonya mantap,penutup,tuning,informal
+bye bye sampai ketemu besok,penutup,tuning,informal
+makasih infonya min,penutup,tuning,informal
+udah cukup kok makasih kak,penutup,tuning,informal
+dadah admin sampai jumpa,penutup,tuning,informal
+tengkyu infonya min,penutup,tuning,informal
+tks ya min atas infonya,penutup,heldout,typo
+makasi banyak kak,penutup,heldout,typo
+terima kasih dan sampai jumpa kembali,penutup,heldout,formal
+cukup sekian pertanyaan saya terima kasih,penutup,heldout,formal
+baik sudah cukup jelas terima kasih min,penutup,heldout,informal
+terima kasih selamat beristirahat,penutup,heldout,formal
+bagaimana ramalan cuaca hari ini,fallback,tuning,oos
+siapa presiden amerika serikat sekarang,fallback,tuning,oos
+apakah besok akan turun hujan lebat di jakarta,fallback,tuning,oos
+tolong buatkan kode python untuk kalkulator,fallback,tuning,oos
+berapa skor pertandingan bola tadi malam,fallback,tuning,oos
+jual pulsa atau token listrik gak min,fallback,tuning,oos
+bisa service mobil honda gak di sini,fallback,tuning,oos
+kamu robot atau manusia sungguhan sih,fallback,tuning,oos
+ceritakan lelucon lucu dong biar gak bosan,fallback,tuning,oos
+rekomendasi film bioskop yang seru minggu ini,fallback,tuning,oos
+harga saham hari ini lagi naik atau turun,fallback,tuning,oos
+dimana letak stasiun kereta terdekat,fallback,tuning,oos
+cara belajar machine learning untuk pemula,fallback,tuning,oos
+bisa pinjam uang seratus ribu dulu gak,fallback,tuning,oos
+warna langit hari ini sangat biru ya,fallback,tuning,oos
+jadwal konser musik rock bulan depan,fallback,tuning,oos
+resep membuat nasi goreng spesial rumahan,fallback,tuning,oos
+toko baju di mall mana yang lagi diskon,fallback,tuning,oos
+berapa hasil dari 25 ditambah 75,fallback,tuning,oos
+apa berita terkini hari ini di indonesia,fallback,tuning,oos
+kucing saya tidak mau makan kenapa ya,fallback,tuning,oos
+jadwal penerbangan ke bali besok pagi,fallback,heldout,oos
+apakah ada lowongan kerja jadi pelayan,fallback,heldout,oos
+cara memperbaiki laptop yang mati total,fallback,heldout,oos
+harga bensin pertamax per liter sekarang berapa,fallback,heldout,oos
+siapa penemu mesin uap pertama kali,fallback,heldout,oos
+berapa jarak dari jakarta ke bandung naik mobil,fallback,heldout,oos
+tokopedia atau shopee yang lebih murah,fallback,heldout,oos
+rekomendasi wisata pantai di lombok yang bagus,fallback,heldout,oos
+tolong terjemahkan kalimat ini ke bahasa jepang,fallback,heldout,oos
