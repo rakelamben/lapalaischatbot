@@ -48,17 +48,17 @@ def score_pattern(msg_tokens: frozenset[str], pattern: Pattern, params: EnginePa
         return Components(0.0, 0.0, 0.0)
 
     # 1. Jaccard: irisan / gabungan
-    inter = pattern.tokens & msg_tokens
-    union = pattern.tokens | msg_tokens
+    inter = pattern.tokens & msg_tokens  # Token yang muncul pada pola dan pesan.
+    union = pattern.tokens | msg_tokens  # Semua token unik dari pola maupun pesan.
     jaccard = len(inter) / len(union) if union else 0.0
 
     # 2. Fuzzy pada level token
-    hits = {t for t in pattern.tokens if token_matches(t, msg_tokens, params)}
+    hits = {t for t in pattern.tokens if token_matches(t, msg_tokens, params)}  # Token pola yang cocok eksak atau fuzzy.
     fuzzy = len(hits) / len(pattern.tokens) if pattern.tokens else 0.0
 
     # 3. Cakupan Berbobot
-    total_weight = sum(pattern.weights.values())
-    hit_weight = sum(pattern.weights.get(t, params.token_weight_default) for t in hits)
+    total_weight = sum(pattern.weights.values())  # Bobot seluruh token pola sebagai penyebut cakupan.
+    hit_weight = sum(pattern.weights.get(t, params.token_weight_default) for t in hits)  # Bobot token pola yang cocok.
     cakupan = hit_weight / total_weight if total_weight > 0 else 0.0
 
     return Components(jaccard=jaccard, fuzzy=fuzzy, cakupan=cakupan)
@@ -79,8 +79,8 @@ def score_intent(msg_tokens: frozenset[str], intent: IntentData, params: EngineP
     if not intent.patterns:
         return Ranking(intent=intent.kode, skor=0.0, jaccard=0.0, fuzzy=0.0, cakupan=0.0)
 
-    best_score = -1.0
-    best_comp = Components(0.0, 0.0, 0.0)
+    best_score = -1.0  # Skor pola tertinggi yang ditemukan untuk intent ini.
+    best_comp = Components(0.0, 0.0, 0.0)  # Komponen skor yang menyertai pola terbaik.
 
     for pat in intent.patterns:
         score, comp = score_single_pattern_total(msg_tokens, pat, params)

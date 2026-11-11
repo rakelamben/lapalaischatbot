@@ -26,7 +26,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const jsonModalBody = document.getElementById("json-modal-body");
   const jsonModalClose = document.getElementById("json-modal-close");
 
-  let isLoading = false;
+  let isLoading = false; // Mencegah refresh bersamaan yang dapat menimpa tampilan dengan data berbeda.
 
   // --- Fungsi Format Waktu Jam:Menit:Detik ---
   function getTimestamp() {
@@ -43,11 +43,11 @@ document.addEventListener("DOMContentLoaded", () => {
     try {
       // 1. Ambil ringkasan statistik
       const summaryResp = await fetch("/analytic/summary");
-      const summaryData = await summaryResp.json();
+      const summaryData = await summaryResp.json(); // KPI, distribusi intent, dan hitungan tabel master.
 
       // 2. Ambil riwayat log percakapan terbaru
       const logsResp = await fetch("/analytic/logs?limit=50");
-      const logsData = await logsResp.json();
+      const logsData = await logsResp.json(); // Riwayat chat terbaru untuk tabel inspeksi.
 
       if (summaryResp.ok) {
         renderSummary(summaryData);
@@ -73,7 +73,7 @@ document.addEventListener("DOMContentLoaded", () => {
     kpiSuccessRate.textContent = (data.success_rate || 0) + "%";
     kpiFallbackCount.textContent = Number(data.total_fallback || 0).toLocaleString();
 
-    let totalMasterRows = 0;
+    let totalMasterRows = 0; // Jumlah seluruh record pada tabel master yang ditampilkan dashboard.
     if (data.table_counts) {
       Object.values(data.table_counts).forEach((cnt) => (totalMasterRows += cnt));
     }
@@ -81,7 +81,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // 2. Grafik Batang Distribusi 10 Intent
     intentBarsContainer.innerHTML = "";
-    const intents = data.intent_distribution || [];
+    const intents = data.intent_distribution || []; // Jumlah dan persentase chat per intent dari backend.
 
     if (intents.length === 0) {
       intentBarsContainer.innerHTML = `<div style="color:#64748b; font-size:0.8rem;">Belum ada interaksi percakapan yang tercatat.</div>`;
@@ -147,13 +147,14 @@ document.addEventListener("DOMContentLoaded", () => {
       const row = document.createElement("tr");
 
       // Format tanggal/jam
-      const dateStr = log.dibuat_pada ? log.dibuat_pada.replace("T", " ").replace("Z", "") : "-";
+      const dateStr = log.dibuat_pada ? log.dibuat_pada.replace("T", " ").replace("Z", "") : "-"; // Timestamp ISO yang diringkas untuk kolom tabel.
 
       // Parse skor JSON untuk mengambil skor intent teratas
       let topScoreText = "-";
       try {
         const scores = JSON.parse(log.skor);
         if (Array.isArray(scores) && scores.length > 0) {
+          // Gunakan skor intent terpilih; jika tidak ditemukan, gunakan kandidat ranking pertama.
           const top = scores.find((s) => s.intent === log.intent_kode) || scores[0];
           topScoreText = Number(top.skor).toFixed(3);
         }

@@ -76,12 +76,12 @@ def decide(
     if not ranking:
         return Decision("fallback", alasan="tanpa_skor")
 
-    top = ranking[0]
-    second = ranking[1] if len(ranking) > 1 else Ranking("none", 0.0, 0.0, 0.0, 0.0)
+    top = ranking[0]  # Kandidat intent dengan skor tertinggi.
+    second = ranking[1] if len(ranking) > 1 else Ranking("none", 0.0, 0.0, 0.0, 0.0)  # Kandidat pembanding margin.
 
     # 1. Cek ambang batas tau
     if top.skor < params.tau:
-        guess = top if top.skor >= params.rho else None
+        guess = top if top.skor >= params.rho else None  # Tebakan hanya ditampilkan jika skor melampaui rho.
         return Decision("fallback", alasan="di_bawah_tau", tebakan=guess)
 
     # 2. Cek margin delta

@@ -17,9 +17,9 @@ document.addEventListener("DOMContentLoaded", () => {
   const reloadSnapshotBtn = document.getElementById("reload-snapshot-btn");
   const clearCardsBtn = document.getElementById("clear-cards-btn");
 
-  let cardHistory = [];
-  let selectedCardIndex = null;
-  let isSending = false;
+  let cardHistory = []; // Hasil permintaan debug, terbaru disimpan pada indeks pertama.
+  let selectedCardIndex = null; // Indeks kartu yang detail analisisnya sedang ditampilkan.
+  let isSending = false; // Status pengiriman untuk mencegah permintaan uji bertumpuk.
 
   // --- Fungsi Format Waktu Jam:Menit:Detik ---
   function getTimeString() {
@@ -29,7 +29,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // --- Fungsi Pengiriman Pesan Uji ke /api/debug/chat ---
   async function sendDebugMessage(text) {
-    const cleanText = text.trim();
+    const cleanText = text.trim(); // Normalisasi spasi tepi sebelum dikirim ke endpoint debug.
     if (!cleanText || isSending) return;
 
     isSending = true;
@@ -46,7 +46,7 @@ document.addEventListener("DOMContentLoaded", () => {
       const data = await resp.json();
 
       if (resp.ok) {
-        const item = {
+        const item = { // Satu entri riwayat berisi pesan uji, waktu kirim, dan payload lengkap API.
           query: cleanText,
           time: getTimeString(),
           response: data,
@@ -83,8 +83,8 @@ document.addEventListener("DOMContentLoaded", () => {
     cardHistory.forEach((item, idx) => {
       const debugInfo = item.response.debug || {};
       const dec = debugInfo.decision || {};
-      const topScore = (debugInfo.ranking && debugInfo.ranking[0]?.skor) || 0;
-      const latency = debugInfo.latency_ms || 0;
+      const topScore = (debugInfo.ranking && debugInfo.ranking[0]?.skor) || 0; // Skor intent tertinggi untuk ringkasan kartu.
+      const latency = debugInfo.latency_ms || 0; // Lama analisis engine yang dilaporkan server.
 
       const card = document.createElement("div");
       card.className = `nlu-card ${idx === selectedCardIndex ? "active" : ""}`;
@@ -132,11 +132,11 @@ document.addEventListener("DOMContentLoaded", () => {
   function renderDrawerDetails(item) {
     const debug = item.response.debug || {};
     const dec = debug.decision || {};
-    const ranking = debug.ranking || [];
-    const tokens = debug.tokens || [];
-    const entities = debug.entities || {};
+    const ranking = debug.ranking || []; // Skor semua kandidat intent untuk tabel rincian.
+    const tokens = debug.tokens || []; // Token hasil normalisasi pesan yang diperiksa engine.
+    const entities = debug.entities || {}; // Filter harga/diet yang berhasil diekstrak dari pesan.
 
-    let rankingRows = "";
+    let rankingRows = ""; // Fragmen baris HTML untuk tabel ranking intent.
     ranking.forEach((r) => {
       const isSelected = r.intent === dec.intent;
       rankingRows += `

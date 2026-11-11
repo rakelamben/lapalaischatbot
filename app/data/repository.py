@@ -34,8 +34,8 @@ class Repository:
         """)
         grouped: dict[str, list[dict[str, Any]]] = {}
         for row in cur.fetchall():
-            d = dict(row)
-            kat = d["kategori"]
+            d = dict(row)  # Ubah sqlite3.Row menjadi dictionary untuk payload service/API.
+            kat = d["kategori"]  # Nama kategori menjadi kunci pengelompokan hidangan.
             if kat not in grouped:
                 grouped[kat] = []
             grouped[kat].append(d)
@@ -53,8 +53,8 @@ class Repository:
     ) -> list[dict[str, Any]]:
         cur = self.conn.cursor()
         diet_list = diet_codes or []
-        n_label = len(diet_list)
-        kode_label_json = json.dumps(diet_list)
+        n_label = len(diet_list)  # Jumlah label yang harus dipenuhi sekaligus oleh satu hidangan.
+        kode_label_json = json.dumps(diet_list)  # Dikirim sebagai JSON agar dapat dibaca fungsi SQLite json_each.
 
         query = """
             SELECT i.id, i.nama, i.deskripsi, i.harga, c.nama AS kategori
@@ -199,6 +199,7 @@ class Repository:
             JOIN intent i ON i.id = cl.intent_id;
         """)
         row = cur.fetchone()
+        # Nilai agregat dipisahkan supaya persentase fallback dan keberhasilan konsisten saat belum ada log.
         total_chat = row["total_chat"] if row else 0
         total_fallback = row["total_fallback"] if row else 0
         total_success = row["total_success"] if row else 0
@@ -214,8 +215,8 @@ class Repository:
         """)
         intent_distribution: list[dict[str, Any]] = []
         for r in cur.fetchall():
-            cnt = r["jumlah"]
-            pct = round((cnt / total_chat * 100), 1) if total_chat > 0 else 0.0
+            cnt = r["jumlah"]  # Banyaknya log yang menunjuk intent ini.
+            pct = round((cnt / total_chat * 100), 1) if total_chat > 0 else 0.0  # Porsi intent terhadap seluruh log.
             intent_distribution.append({
                 "kode": r["kode"],
                 "nama": r["nama"],

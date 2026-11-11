@@ -14,9 +14,9 @@ document.addEventListener("DOMContentLoaded", () => {
   const optionsDropdown = document.getElementById("options-dropdown");
   const clearChatBtn = document.getElementById("clear-chat-btn");
 
-  const artificialDelayMs = 1000;
-  let prevTemplateId = null;
-  let isPending = false;
+  const artificialDelayMs = 1000; // Jeda tampilan agar respons tidak terasa muncul terlalu instan.
+  let prevTemplateId = null; // ID template terakhir, dikirim agar kalimat pembuka tidak berulang.
+  let isPending = false; // Mencegah pengiriman pesan baru sebelum permintaan sebelumnya selesai.
 
   chatContainer.style.visibility = "hidden";
   setTimeout(() => {
@@ -74,6 +74,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   function appendMenuItems(container, items) {
+    // Kelompokkan hidangan berdasarkan kategori supaya daftar menu tetap terstruktur.
     const groups = new Map();
     items.forEach((item) => {
       const category = item.kategori || "Menu";
@@ -109,6 +110,7 @@ document.addEventListener("DOMContentLoaded", () => {
   function appendStructuredContent(bubble, content, contentType) {
     if (!Array.isArray(content) || content.length === 0) return;
 
+    // content_type menentukan renderer khusus untuk bentuk data dari handler.
     const section = document.createElement("div");
     section.className = "chat-structured-content";
 
@@ -252,7 +254,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // --- Fungsi Utama Pengiriman Pesan ---
   // Mengirim pesan ke POST /api/chat, menerima respons, dan merotasi template_id.
   async function sendMessage(text) {
-    const cleanText = text.trim();
+    const cleanText = text.trim(); // Hapus spasi tepi sebelum pesan ditampilkan dan dikirim ke API.
     if (!cleanText || isPending) return;
 
     isPending = true;
@@ -274,12 +276,12 @@ document.addEventListener("DOMContentLoaded", () => {
       });
       await new Promise((resolve) => setTimeout(resolve, artificialDelayMs));
 
-      const data = await resp.json();
+      const data = await resp.json(); // Payload jawaban, data terstruktur, saran, atau error API.
       hideTypingIndicator();
 
       if (resp.ok && data.reply) {
         appendMessage("bot", data.reply, data.content, data.content_type);
-        prevTemplateId = data.template_id || null;
+        prevTemplateId = data.template_id || null; // Simpan pilihan server sebagai konteks rotasi template berikutnya.
         renderChips(data.suggestions);
       } else {
         const errMsg = data.error?.message || "Mohon maaf, terjadi kendala komunikasi dengan pelayan kami.";
