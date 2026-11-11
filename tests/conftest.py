@@ -34,11 +34,18 @@ def migrations_dir(project_root: Path) -> Path:
 
 
 @pytest.fixture
-def temp_db(tmp_path: Path, seed_dir: Path, migrations_dir: Path) -> sqlite3.Connection:
-    """Fixture database SQLite sementara yang di-seed untuk setiap test."""
+def temp_db_path(tmp_path: Path, seed_dir: Path, migrations_dir: Path) -> Path:
+    """Fixture path file SQLite sementara yang di-seed untuk setiap test."""
     db_file = tmp_path / "test_lapalais.db"
     build_db(db_file, seed_dir, migrations_dir, reset=True)
-    conn = sqlite3.connect(db_file)
+    return db_file
+
+
+@pytest.fixture
+def temp_db(temp_db_path: Path) -> sqlite3.Connection:
+    """Fixture koneksi database SQLite sementara yang di-seed untuk setiap test."""
+    conn = sqlite3.connect(temp_db_path)
+    conn.row_factory = sqlite3.Row
     conn.execute("PRAGMA foreign_keys = ON;")
     yield conn
     conn.close()

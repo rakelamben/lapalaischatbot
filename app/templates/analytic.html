@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>La Palais — Dashboard Analitik Database</title>
+  <link rel="stylesheet" href="/static/css/theme.css">
+  <link rel="stylesheet" href="/static/css/analytic.css">
+</head>
+<body>
+  <div class="analytic-app-container">
+    
+    <!-- Header Dashboard -->
+    <header class="analytic-header">
+      <div class="analytic-header-left">
+        <span class="analytic-logo">La Palais</span>
+        <span class="analytic-title-badge">Monitoring & Analitik NLU</span>
+      </div>
+      <div class="analytic-header-right">
+        <a href="/" class="header-nav-link" target="_blank" style="color:#94a3b8; text-decoration:none; font-size:0.8rem;">Web Tamu ↗</a>
+        <a href="/debug" class="header-nav-link" style="color:#94a3b8; text-decoration:none; font-size:0.8rem;">Konsol Debug ↗</a>
+        <span class="last-updated" id="last-updated">Memuat data...</span>
+        <button type="button" class="refresh-btn" id="refresh-btn">
+          &#8635; Refresh Data
+        </button>
+      </div>
+    </header>
+
+    <!-- Konten Utama Dashboard -->
+    <main class="analytic-main-content">
+      
+      <!-- 1. Visual KPI Cards Grid -->
+      <section class="kpi-grid" aria-label="Ringkasan Metrik Kunci">
+        <div class="kpi-card">
+          <span class="kpi-label">Total Percakapan (chat_log)</span>
+          <span class="kpi-value" id="kpi-total-chat">-</span>
+          <span class="kpi-subtext">Akumulasi seluruh interaksi tamu</span>
+        </div>
+
+        <div class="kpi-card">
+          <span class="kpi-label">Tingkat Keberhasilan Klasifikasi</span>
+          <span class="kpi-value" id="kpi-success-rate">-%</span>
+          <span class="kpi-subtext">Rasio intent non-fallback terpilih</span>
+        </div>
+
+        <div class="kpi-card">
+          <span class="kpi-label">Total Fallback Queries</span>
+          <span class="kpi-value" id="kpi-fallback-count">-</span>
+          <span class="kpi-subtext">Permintaan di bawah ambang rho/tau</span>
+        </div>
+
+        <div class="kpi-card">
+          <span class="kpi-label">Master Data Records</span>
+          <span class="kpi-value" id="kpi-total-master">-</span>
+          <span class="kpi-subtext">Total baris pada 6 tabel master SQLite</span>
+        </div>
+      </section>
+
+      <!-- 2. Visualisasi Distribusi Intent & Master Data -->
+      <section class="charts-grid">
+        <!-- Distribusi 10 Intent (Bar Visual) -->
+        <div class="chart-panel">
+          <div class="panel-title">
+            <span>Distribusi Frekuensi 10 Intent</span>
+            <small style="color:#94a3b8; font-weight:400; font-size:0.75rem;">Frekuensi Panggilan Relatif</small>
+          </div>
+          <div class="intent-bars-list" id="intent-bars-container">
+            <!-- Diisi secara dinamis oleh analytic.js -->
+            <div style="color:#64748b; font-size:0.8rem;">Memuat distribusi...</div>
+          </div>
+        </div>
+
+        <!-- Status Record Master Data Restoran -->
+        <div class="chart-panel">
+          <div class="panel-title">
+            <span>Integritas Basis Data Master</span>
+            <small style="color:#94a3b8; font-weight:400; font-size:0.75rem;">6 Tabel Pengetahuan</small>
+          </div>
+          <div class="master-data-grid" id="master-data-grid">
+            <!-- Diisi secara dinamis oleh analytic.js -->
+          </div>
+        </div>
+      </section>
+
+      <!-- 3. Tabel Live Chat Logs Interaktif -->
+      <section class="logs-section">
+        <div class="panel-title">
+          <span>Riwayat Interaksi Percakapan Terbaru</span>
+          <span class="badge-score" id="logs-count-badge" style="background:#222935; color:#cbd5e1; padding:3px 8px; border-radius:4px; font-size:0.75rem;">0 entri</span>
+        </div>
+
+        <div class="logs-table-wrapper">
+          <table class="logs-table">
+            <thead>
+              <tr>
+                <th style="width: 60px;">ID</th>
+                <th style="width: 140px;">Waktu (UTC)</th>
+                <th>Pesan Pengguna</th>
+                <th style="width: 170px;">Intent Terpilih</th>
+                <th style="width: 90px;">Skor Top</th>
+                <th style="width: 110px;">Aksi</th>
+              </tr>
+            </thead>
+            <tbody id="logs-table-body">
+              <tr>
+                <td colspan="6" style="text-align: center; color: #64748b; padding: 20px;">
+                  Memuat data riwayat log...
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- Modal Raw JSON Inspector -->
+    <div class="modal-overlay" id="json-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+      <div class="modal-card">
+        <div class="modal-header">
+          <h3 id="modal-title">Inspeksi Data Log Mentah (JSON)</h3>
+          <button type="button" class="modal-close-btn" id="json-modal-close" aria-label="Tutup Modal">&times;</button>
+        </div>
+        <pre class="modal-body" id="json-modal-body"></pre>
+      </div>
+    </div>
+
+  </div>
+
+  <script src="/static/js/analytic.js"></script>
+</body>
+</html>

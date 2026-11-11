@@ -1,0 +1,96 @@
+/* ==========================================================================
+   THEME TOKENS — LA PALAIS RESTAURANT
+   Palet warna fine dining, tipografi elegan (Serif & Sans), dan sistem grid responsif.
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:wght@400;700&family=Public+Sans:wght@400;600&display=swap');
+
+:root {
+  /* Palet Warna Primer & Aksen Fine Dining */
+  --color-bg: #f8f7f4;               /* Linen hangat bertekstur */
+  --color-surface: #ffffff;          /* Permukaan kartu putih bersih */
+  --color-surface-subtle: #f1ede7;   /* Permukaan sekunder/aksen linen */
+  --color-border: #e2ded7;           /* Garis pembatas halus */
+  --color-border-subtle: #ece8e1;
+  
+  --color-dark: #121417;             /* Slate arang pekat */
+  --color-dark-surface: #1a1e24;     /* Permukaan gelap kartu */
+  --color-dark-border: #2c323d;      /* Garis batas mode gelap */
+
+  --color-gold: #c5a059;             /* Champagne Gold mewah */
+  --color-gold-hover: #b38f48;
+  --color-gold-light: #f7f2e7;
+
+  /* Tipografi Teks */
+  --color-text-main: #1c1e21;        /* Teks utama */
+  --color-text-muted: #606770;       /* Teks sekunder/penjelas */
+  --color-text-on-dark: #fbfbfb;
+
+  /* Status Semantik Klasifikasi Intent */
+  --color-success: #2e7d32;
+  --color-success-bg: #e8f5e9;
+  --color-warning: #d97706;
+  --color-warning-bg: #fef3c7;
+  --color-fallback: #57534e;
+  --color-fallback-bg: #f5f5f4;
+
+  /* Font Families */
+  --font-serif: "Fraunces", "Cormorant Garamond", "Didot", "Georgia", serif;
+  --font-sans: "Public sans", BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
+  --font-mono: "JetBrains Mono", "SF Mono", "Fira Code", monospace;
+
+  /* Radius & Elevasi */
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 16px;
+  --radius-full: 9999px;
+
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.08);
+  --shadow-lg: 0 10px 25px rgba(0, 0, 0, 0.12);
+
+  --transition-fast: 0.15s ease;
+  --transition-normal: 0.25s ease;
+}
+
+/* Reset Dasar & Pengaturan Universal */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--color-bg);
+  color: var(--color-text-main);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+button, input, textarea {
+  font-family: inherit;
+  font-size: inherit;
+  border: none;
+  outline: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+/* Scrollbar Halus */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #d4cfc7;
+  border-radius: var(--radius-full);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-gold);
+}

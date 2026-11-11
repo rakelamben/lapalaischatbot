@@ -18,6 +18,12 @@ def load_json(path: Path) -> dict | list:
         return json.load(f)
 
 
+# --- Pembangunan Basis Data dari Seed ---
+# Membangun file SQLite data/lapalais.db secara deterministik:
+# 1. Menyiapkan direktori dan menangani opsi --reset (menghapus file database lama).
+# 2. Menerapkan skema tabel relasional dari file migrasi SQL.
+# 3. Memuat 7 file seed JSON sebagai sumber kebenaran tunggal.
+# 4. Melakukan populasi data secara terstruktur dengan menjaga penegakan Foreign Key.
 def build_db(db_path: Path, seed_dir: Path, migrations_dir: Path, reset: bool = False) -> None:
     db_path.parent.mkdir(parents=True, exist_ok=True)
 

@@ -18,6 +18,17 @@ def load_json(path: Path) -> dict | list:
         return json.load(f)
 
 
+# --- Validator Integritas Data Seed (PRD R5 & System Design 5.6) ---
+# Memeriksa seluruh aturan model data sebelum database dibangun:
+# 1. Kelengkapan dan sintaksis JSON pada 7 file seed.
+# 2. Konsistensi teks sistem fixed_text.
+# 3. Validitas glosarium kuliner dan kuota istilah teknik (8-12 istilah).
+# 4. Kebenaran leksikon (stopword, sinonim, bobot token 1 atau 3).
+# 5. Struktur 11 intent: keunikan pola, frasa kanonik, dan tepat 3 template (dengan tepat satu {daftar} untuk info).
+# 6. Integritas menu: kategori 1..n, harga Rupiah > 0, relasi diet, dan paket berurutan beserta deskripsi alur rasa.
+# 7. Validitas relasi pairing (termasuk ketersediaan pilihan non-alkohol).
+# 8. Urutan informasi reservasi.
+# 9. Pengecekan silang istilah Prancis terhadap glosarium.
 def validate_seed(seed_dir: Path | None = None) -> list[str]:
     if seed_dir is None:
         seed_dir = Path(__file__).resolve().parent.parent / "seed"

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>La Palais — NLU Debug Console</title>
+  <link rel="stylesheet" href="/static/css/theme.css">
+  <link rel="stylesheet" href="/static/css/debug.css">
+</head>
+<body>
+  <div class="debug-app-container">
+    
+    <!-- Header Konsol Debug -->
+    <header class="debug-header">
+      <div class="debug-header-title">
+        <span class="debug-logo">La Palais</span>
+        <span class="debug-tag">NLU Console</span>
+      </div>
+      <div class="debug-header-actions">
+        <a href="/" class="header-nav-link" target="_blank">Lihat Web Tamu ↗</a>
+        <a href="/analytic" class="header-nav-link">Dashboard Analitik ↗</a>
+        <button type="button" class="header-btn" id="reload-snapshot-btn" title="Reload NLU Model dari DB">
+          &#8635; <span>Reload Snapshot</span>
+        </button>
+      </div>
+    </header>
+
+    <!-- Main Grid: 3 Section Layout -->
+    <main class="debug-grid-main" id="debug-grid-main">
+      
+      <!-- SECTION 2: Kiri Atas — Container Kartu Hasil NLU -->
+      <section class="debug-section-cards" id="debug-cards-container" aria-label="Riwayat Kartu NLU">
+        <div class="cards-empty-state" id="cards-empty-state">
+          <strong>Belum Ada Uji NLU</strong>
+          <p>Ketik kalimat pengujian pada kotak input di bawah untuk mengevaluasi keputusan dan skor 10 intent.</p>
+        </div>
+      </section>
+
+      <!-- SECTION 1: Kiri Bawah — Composer Input Pengujian -->
+      <section class="debug-section-composer" aria-label="Input Uji NLU">
+        <div class="debug-input-row">
+          <textarea
+            class="debug-textarea"
+            id="debug-textarea"
+            rows="1"
+            placeholder="Masukkan kalimat uji NLU (contoh: menu vegetarian di bawah 1,2 juta)..."
+          ></textarea>
+          <button type="button" class="debug-send-btn" id="debug-send-btn">
+            Uji NLU
+          </button>
+          <button type="button" class="header-btn" id="clear-cards-btn" title="Bersihkan riwayat kartu">
+            Reset
+          </button>
+        </div>
+      </section>
+
+      <!-- SECTION 3: Kanan Rowspan 2 — Collapsible Drawer Detail Hasil NLU -->
+      <aside class="debug-section-drawer" id="debug-drawer" aria-label="Detail Analisis NLU">
+        <div class="drawer-header">
+          <div class="drawer-title">
+            <span>Rincian Analisis NLU</span>
+          </div>
+          <button type="button" class="drawer-toggle-btn" id="drawer-toggle-btn" title="Lipat Drawer ke Kanan">
+            &raquo;
+          </button>
+        </div>
+
+        <div class="drawer-content" id="drawer-content">
+          <div style="margin: auto; text-align: center; color: #64748b; font-size: 0.85rem;">
+            Pilih salah satu kartu NLU di sebelah kiri untuk melihat rincian kalkulasi skor dan token.
+          </div>
+        </div>
+      </aside>
+
+    </main>
+
+  </div>
+
+  <script src="/static/js/debug.js"></script>
+</body>
+</html>

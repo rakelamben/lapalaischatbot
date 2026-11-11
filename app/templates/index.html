@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>La Palais — Virtual Concierge</title>
+  <link rel="stylesheet" href="/static/css/theme.css">
+  <link rel="stylesheet" href="/static/css/chat.css">
+</head>
+<body>
+  <div class="chat-app-wrapper">
+    <main class="chat-container">
+      
+      <!-- 1. Headline: Avatar, Identitas & Status Online -->
+      <header class="chat-headline">
+        <div class="headline-brand">
+          <div class="brand-avatar" aria-hidden="true">
+            <img src="/static/assets/botavatar.webp" alt="Logo La Palais" style="object-fit:cover; width:100%; height:100%;" />
+          </div>
+          <div class="brand-info">
+            <h1>LaPalais Bot</h1>
+            <p>ChatBot Menu Fine Dining Prancis</p>
+          </div>
+        </div>
+      </header>
+
+      <!-- 2. Chat Section: Menampung Seluruh Bubble Chat -->
+      <section class="chat-section" id="chat-messages" aria-live="polite">
+        <!-- Pesan Pembuka Default -->
+        <div class="message-row bot">
+          <div class="message-bubble">
+            <p>
+              Bonjour! Selamat datang di La Palais. Saya adalah Virtual Concierge Anda, siap memandu Anda menjelajahi pilihan menu degustasi, paduan minuman pilihan, teknik kuliner kami, maupun reservasi meja.
+            </p>
+            <div class="message-time">
+              <script>
+                const now = new Date();
+                const hours = now.getHours().toString().padStart(2, '0');
+                const minutes = now.getMinutes().toString().padStart(2, '0');
+                document.write(`${hours}:${minutes}`);
+              </script>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 3. Composer Input Section: Chips di atas + Input dengan Menu Titik Tiga -->
+      <footer class="composer-section">
+        <!-- Chip Fixed Text / Saran Pertanyaan di Atas Input -->
+        <div class="chips-container" id="chips-container" role="toolbar" aria-label="Saran pertanyaan cepat">
+          <!-- Diisi secara dinamis oleh chat.js -->
+        </div>
+
+        <!-- Form Input Chat dengan Dropdown Menu Titik Tiga di Sebelah Kiri -->
+        <div class="composer-box">
+          <!-- Icon Titik Tiga & Dropdown -->
+          <div class="options-btn-wrapper">
+            <button type="button" class="three-dots-btn" id="three-dots-btn" title="Opsi Obrolan" aria-label="Opsi Obrolan">
+              &#8942;
+            </button>
+            <div class="options-dropdown" id="options-dropdown">
+              <button type="button" class="dropdown-item" id="clear-chat-btn">
+                <span>&#128465;</span>
+                <span>Hapus Obrolan</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Kolom Input Teks Chat -->
+          <textarea
+            class="composer-textarea"
+            id="composer-textarea"
+            rows="1"
+            placeholder="Tanyakan sesuatu tentang menu, harga, atau reservasi..."
+            aria-label="Ketik pesan Anda"
+          ></textarea>
+
+          <!-- Tombol Kirim -->
+          <button type="button" class="send-btn" id="send-btn" title="Kirim Pesan" aria-label="Kirim Pesan" disabled>
+            &#10148;
+          </button>
+        </div>
+      </footer>
+
+    </main>
+  </div>
+
+  <script src="/static/js/chat.js"></script>
+</body>
+</html>

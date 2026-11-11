@@ -1,0 +1,454 @@
+/* ==========================================================================
+   GUEST CHAT INTERFACE — LA PALAIS RESTAURANT
+   Tata letak Base Layout: Headline, Chat Section, Composer dengan chips di atas,
+   dan dropdown menu titik tiga di sebelah kiri kolom input.
+   ========================================================================== */
+
+.chat-app-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  min-height: 100dvh;
+  padding: 16px;
+  background: radial-gradient(circle at 50% 10%, #fffbf6 0%, #f1ece4 100%);
+}
+
+.chat-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 780px;
+  height: 94vh;
+  height: 94dvh;
+  background-color: var(--color-surface);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--color-border);
+  box-shadow: var(--shadow-lg);
+  overflow: hidden;
+  position: relative;
+}
+
+/* --- 1. Headline: Avatar, Identitas & Status Online --- */
+.chat-headline {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 24px;
+  background-color: var(--color-surface);
+  border-bottom: 1px solid var(--color-border);
+  z-index: 10;
+}
+
+.headline-brand {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.brand-avatar {
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-full);
+  background: linear-gradient(135deg, var(--color-dark), #2c333f);
+  color: var(--color-gold);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-serif);
+  font-size: 1.15rem;
+  font-weight: 700;
+  border: 1.5px solid var(--color-gold);
+  box-shadow: var(--shadow-sm);
+  overflow: hidden;
+}
+
+.brand-info h1 {
+  font-family: var(--font-serif);
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--color-dark);
+  letter-spacing: 0.02em;
+}
+
+.brand-info p {
+  font-size: 0.8rem;
+  color: var(--color-text-muted);
+  letter-spacing: 0.05em;
+}
+
+.headline-status {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.82rem;
+  font-weight: 500;
+  color: var(--color-text-muted);
+  background: var(--color-surface-subtle);
+  padding: 6px 12px;
+  border-radius: var(--radius-full);
+  border: 1px solid var(--color-border-subtle);
+}
+
+.status-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: var(--radius-full);
+  background-color: #10b981;
+  box-shadow: 0 0 0 2px rgba(16, 185, 129, 0.2);
+  animation: pulse-green 2s infinite;
+}
+
+@keyframes pulse-green {
+  0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.5); }
+  70% { transform: scale(1); box-shadow: 0 0 0 6px rgba(16, 185, 129, 0); }
+  100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+}
+
+/* --- 2. Chat Section: Wadah Seluruh Bubble Chat --- */
+.chat-section {
+  flex: 1;
+  overflow-y: auto;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  background-color: var(--color-bg);
+}
+
+.message-row {
+  display: flex;
+  align-items: flex-end;
+  gap: 10px;
+  max-width: 82%;
+  width: fit-content;
+  height: fit-content;
+  animation: message-pop 0.2s ease-out;
+}
+
+@keyframes message-pop {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.message-row.bot {
+  align-self: flex-start;
+}
+
+.message-row.user {
+  align-self: flex-end;
+  flex-direction: row-reverse;
+}
+
+.message-bubble {
+  padding: 12px 18px;
+  border-radius: var(--radius-md);
+  font-size: 0.95rem;
+  word-break: break-word;
+  height: fit-content;
+  position: relative;
+}
+
+.message-row.bot .message-bubble {
+  background-color: var(--color-surface);
+  color: var(--color-dark);
+  border: 1px solid var(--color-border);
+  border-bottom-left-radius: 2px;
+  box-shadow: var(--shadow-sm);
+}
+
+.message-row.user .message-bubble {
+  background: linear-gradient(135deg, var(--color-dark), #262c36);
+  color: var(--color-text-on-dark);
+  border-bottom-right-radius: 2px;
+  box-shadow: var(--shadow-sm);
+}
+
+.message-time {
+  font-size: 0.72rem;
+  color: var(--color-text-muted);
+  margin-top: 4px;
+}
+
+.message-row.user .message-time {
+  text-align: right;
+}
+
+.chat-structured-content {
+  display: grid;
+  gap: 12px;
+  margin-top: 12px;
+  padding-top: 10px;
+  border-top: 1px solid var(--color-border-subtle);
+}
+
+.chat-data-group {
+  display: grid;
+  gap: 6px;
+  min-width: 0;
+}
+
+.chat-data-heading {
+  color: var(--color-dark);
+  font-family: var(--font-serif);
+  font-size: 0.95rem;
+}
+
+.chat-data-list {
+  display: grid;
+  gap: 8px;
+  margin: 0;
+  padding-left: 1.2rem;
+}
+
+.chat-data-item {
+  padding-left: 2px;
+}
+
+.chat-data-title {
+  color: var(--color-dark);
+  font-weight: 600;
+}
+
+.chat-data-description {
+  color: var(--color-text-muted);
+  font-size: 0.86rem;
+  line-height: 1.45;
+}
+
+.chat-data-price,
+.chat-data-meta {
+  color: #8c6827;
+  font-size: 0.84rem;
+  font-weight: 600;
+}
+
+.chat-data-package {
+  display: grid;
+  gap: 8px;
+  padding: 10px 12px;
+  border: 1px solid var(--color-border-subtle);
+  border-radius: var(--radius-sm);
+  background-color: var(--color-surface-subtle);
+}
+
+.chat-data-reservation {
+  display: grid;
+  gap: 8px;
+}
+
+.chat-data-reservation-item {
+  display: grid;
+  grid-template-columns: minmax(100px, 0.4fr) minmax(0, 1fr);
+  gap: 8px;
+}
+
+/* Indikator Mengetik (Typing Indicator) */
+.typing-bubble {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 12px 16px;
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  border-bottom-left-radius: 2px;
+}
+
+.typing-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: var(--radius-full);
+  background-color: var(--color-gold);
+  animation: typing-jump 1.4s infinite ease-in-out;
+}
+
+.typing-dot:nth-child(1) { animation-delay: 0s; }
+.typing-dot:nth-child(2) { animation-delay: 0.2s; }
+.typing-dot:nth-child(3) { animation-delay: 0.4s; }
+
+@keyframes typing-jump {
+  0%, 80%, 100% { transform: translateY(0); opacity: 0.4; }
+  40% { transform: translateY(-5px); opacity: 1; }
+}
+
+/* --- 3. Composer Input Section: Chips di atas + Input dengan Menu Titik Tiga --- */
+.composer-section {
+  padding: 12px 18px 18px 18px;
+  background-color: var(--color-surface);
+  border-top: 1px solid var(--color-border);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* Chip Fixed Text / Suggestions di Atas Kolom Input */
+.chips-container {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding-bottom: 4px;
+  padding-top: 2px;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+.chips-container::-webkit-scrollbar {
+  display: none;
+}
+
+.suggestion-chip {
+  flex-shrink: 0;
+  padding: 6px 14px;
+  font-size: 0.82rem;
+  font-weight: 500;
+  border-radius: var(--radius-full);
+  background-color: var(--color-surface-subtle);
+  color: var(--color-dark);
+  border: 1px solid var(--color-border);
+  transition: all var(--transition-fast);
+}
+
+.suggestion-chip:hover {
+  background-color: var(--color-gold-light);
+  border-color: var(--color-gold);
+  color: #8c6827;
+  transform: translateY(-1px);
+}
+
+/* Form Input Terpadu */
+.composer-box {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background-color: var(--color-bg);
+  border: 1.5px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: 6px 10px;
+  transition: border-color var(--transition-fast);
+  position: relative;
+}
+
+.composer-box:focus-within {
+  border-color: var(--color-gold);
+  background-color: var(--color-surface);
+  box-shadow: 0 0 0 3px rgba(197, 160, 89, 0.15);
+}
+
+/* Tombol Titik Tiga (Dropdown Menu di Sisi Kiri) */
+.options-btn-wrapper {
+  position: relative;
+}
+
+.three-dots-btn {
+  width: 34px;
+  height: 34px;
+  border-radius: var(--radius-sm);
+  background: transparent;
+  color: var(--color-text-muted);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+  transition: background-color var(--transition-fast), color var(--transition-fast);
+}
+
+.three-dots-btn:hover {
+  background-color: var(--color-surface-subtle);
+  color: var(--color-dark);
+}
+
+.options-dropdown {
+  position: absolute;
+  bottom: calc(100% + 8px);
+  left: 0;
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  box-shadow: var(--shadow-md);
+  min-width: 170px;
+  display: none;
+  flex-direction: column;
+  z-index: 50;
+  overflow: hidden;
+  animation: dropdown-fade 0.15s ease-out;
+}
+
+.options-dropdown.open {
+  display: flex;
+}
+
+@keyframes dropdown-fade {
+  from { opacity: 0; transform: translateY(4px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.dropdown-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 14px;
+  font-size: 0.85rem;
+  color: #dc2626;
+  background: transparent;
+  text-align: left;
+  width: 100%;
+  transition: background-color var(--transition-fast);
+}
+
+.dropdown-item:hover {
+  background-color: #fee2e2;
+}
+
+/* Kolom Input Chat Utama */
+.composer-textarea {
+  flex: 1;
+  background: transparent;
+  resize: none;
+  border: none;
+  outline: none;
+  max-height: 110px;
+  font-size: 0.95rem;
+  line-height: 1.45;
+  color: var(--color-dark);
+  padding: 4px 2px;
+}
+
+.composer-textarea::placeholder {
+  color: #9ca3af;
+}
+
+/* Tombol Kirim */
+.send-btn {
+  width: 36px;
+  height: 36px;
+  border-radius: var(--radius-sm);
+  background: var(--color-gold);
+  color: var(--color-dark);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.05rem;
+  transition: all var(--transition-fast);
+  flex-shrink: 0;
+}
+
+.send-btn:hover:not(:disabled) {
+  background-color: var(--color-gold-hover);
+  color: #ffffff;
+  transform: scale(1.04);
+}
+
+.send-btn:disabled {
+  background-color: #e5e0d8;
+  color: #9ca3af;
+  cursor: not-allowed;
+  transform: none;
+}
+
+@media (max-width: 480px) {
+  .chat-data-reservation-item {
+    grid-template-columns: 1fr;
+    gap: 2px;
+  }
+}
